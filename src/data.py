@@ -57,3 +57,39 @@ def clean_data(df:pd.DataFrame):
     )
 
     return out
+
+
+def split_data(df:pd.DataFrame,save:bool = True):
+
+    data = df.copy()
+
+    n_before = len(data)
+    data = data.dropna(subset=[config.TARGET_COL])
+    n_droped_target = n_before - len(data)
+
+    n_before_dup = len(data)
+    data = data.drop_duplicates()
+    n_dropped_dup = n_before_dup - len(data)
+
+    train,test = train_test_split(data,test_size=config.TEST_SIZE,stratify=data[config.TARGET_COL],random_state=config.RANDOM_STATE)
+
+    train = train.reset_index(drop=True)
+    test = test.reset_index(drop=True)
+
+    info = {
+        "n_dropped_missing_target":int(n_droped_target),
+        "n_dropped_duplicates":int(n_dropped_dup),
+        "n_train":int(len(train)),
+        "n_test":int(len(test)),
+        "train_missing_values":(train.isna().sum().to_dict()),
+        "test_missing_values":(test.isna().sum().to_dict()),
+        "train_distribution":train[config.TARGET_COL].value_counts(normalize=True).round(3).to_dict(),
+        "test_distribution":test[config.TARGET_COL].value_counts(normalize=True).round(3).to_dict(),
+
+    }
+
+    if save:
+        train.to_csv(config.DATA_INTERIM/"train.csv",index=False)
+        test.to_csv(config.DATA_INTERIM/"test.csv",index=False)
+        (config.DATA_INTERIM / "split_info.json").write_text(json.dumps(info,indent=2),encoding="utf-8")
+    return train,test,info
