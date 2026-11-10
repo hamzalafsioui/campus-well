@@ -7,7 +7,7 @@ from src import config
 # Numeric Features
 NUMERIC_FEATURES = [
     "Age",
-    "Year_of_study",
+    "Year_of_Study",
     "Sleep_Hours",
     "Study_Hours_Per_Week",
     "GPA",
@@ -105,3 +105,34 @@ def build_preprocessor() -> ColumnTransformer:
 
     return preprocessor
 
+
+def build_model_pipeline(model) -> Pipeline:
+
+    return Pipeline(
+        steps=[
+            ("preprocessor",build_preprocessor()),
+            ("model",model),
+        ]
+    )
+
+
+def prepare_features(data):
+
+    missing_columns = [
+        column for column in MODEL_FEATURES if column not in data.columns
+    ]
+
+    if missing_columns:
+        raise ValueError(
+            f"Missing required columns: {missing_columns}"
+        )
+
+    return data[MODEL_FEATURES].copy()
+
+def prepare_target(data):
+    if config.TARGET_COL not in data.columns:
+        raise ValueError(
+            f"Missing target column: {config.TARGET_COL}"
+        )
+
+    return data[config.TARGET_COL].copy()
