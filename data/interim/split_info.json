@@ -1,0 +1,54 @@
+{
+  "n_dropped_missing_target": 0,
+  "n_dropped_duplicates": 0,
+  "n_train": 1600,
+  "n_test": 400,
+  "train_missing_values": {
+    "Student_ID": 0,
+    "Age": 0,
+    "Gender": 0,
+    "Year_of_Study": 0,
+    "Sleep_Hours": 54,
+    "Study_Hours_Per_Week": 0,
+    "GPA": 36,
+    "Social_Media_Hours": 48,
+    "Screen_Time_Hours": 0,
+    "Physical_Activity": 0,
+    "Financial_Stress": 76,
+    "Family_Support": 36,
+    "Attendance_Rate": 39,
+    "Part_Time_Job": 0,
+    "Diet_Quality": 55,
+    "Previous_Mental_Health_History": 0,
+    "Mental_Health_Risk": 0
+  },
+  "test_missing_values": {
+    "Student_ID": 0,
+    "Age": 0,
+    "Gender": 0,
+    "Year_of_Study": 0,
+    "Sleep_Hours": 8,
+    "Study_Hours_Per_Week": 0,
+    "GPA": 2,
+    "Social_Media_Hours": 10,
+    "Screen_Time_Hours": 0,
+    "Physical_Activity": 0,
+    "Financial_Stress": 15,
+    "Family_Support": 18,
+    "Attendance_Rate": 8,
+    "Part_Time_Job": 0,
+    "Diet_Quality": 14,
+    "Previous_Mental_Health_History": 0,
+    "Mental_Health_Risk": 0
+  },
+  "train_distribution": {
+    "High": 0.34,
+    "Medium": 0.33,
+    "Low": 0.33
+  },
+  "test_distribution": {
+    "High": 0.34,
+    "Medium": 0.33,
+    "Low": 0.33
+  }
+}
