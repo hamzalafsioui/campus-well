@@ -36,3 +36,18 @@ def get_models():
         # Gradient Boosting (trees trained one after another each correction the previous ones)
         "Gradient Boosting":GradientBoostingClassifier(random_state=config.RANDOM_STATE),
     }
+
+
+PARAM_GRIDS = {
+    "Logistic Regression": {
+        "model__C": [0.001, 0.01, 0.1, 1, 10, 100],
+        "model__class_weight": [None, "balanced"],
+    },
+    "Gradient Boosting": {
+        "model__n_estimators": [100, 200, 300, 500],
+        "model__learning_rate": [0.01, 0.03, 0.05, 0.1],
+        "model__max_depth": [1, 2, 3],
+        "model__subsample": [0.7, 0.85, 1.0],
+        "model__min_samples_leaf": [1, 5, 10, 20],
+    },
+}
