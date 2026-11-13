@@ -1,0 +1,33 @@
+# Git
+.git
+.gitignore
+
+# Python virtual environment & cache
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Airflow state & logs
+airflow_home/
+airflow/
+*.pid
+
+# Data and large files
+*.log
+.coverage
+htmlcov/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+

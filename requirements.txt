@@ -7,3 +7,7 @@ matplotlib>=3.11,<4
 seaborn>=0.13,<1
 joblib>=1.6,<2
 streamlit>=1.67,<2
+jupyterlab>=4.0,<5
+apache-airflow==2.10.5
+jupyterlab>=4.0,<5
+apache-airflow==2.10.5
