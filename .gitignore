@@ -12,3 +12,14 @@ __pycache__/
 airflow/logs/
 airflow/db/
 .DS_Store
+
+
+# --- Docker / Airflow local state ---
+airflow_home/*
+!airflow_home/.gitkeep
+airflow_home/airflow.db
+airflow_home/airflow.cfg
+airflow_home/logs/
+airflow_home/webserver_config.py
+airflow_home/*.pid
+*.log
