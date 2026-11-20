@@ -1,6 +1,6 @@
 # CampusWell: Student Mental Health Risk Analysis and Prediction
 
-CampusWell is an applied data science project designed to analyze factors influencing student well-being and mental health risk, and to build an end-to-end supervised machine learning classification pipeline.
+CampusWell is an educational, end-to-end machine learning platform for analyzing student well-being factors and estimating mental health risk levels. It combines data exploration, leakage-safe preprocessing, model comparison, hyperparameter tuning, automated Airflow workflows, and an interactive Streamlit dashboard to demonstrate how responsible predictive analytics can support early academic and counseling support. The project is intended for learning and research—not clinical diagnosis or decision-making.
 
 ## Important Disclaimer
 
